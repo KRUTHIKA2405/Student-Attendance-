@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rural Attendance Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script type="module" src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Teacher Attendance Dashboard</h1>
+    <div class="top-actions">
+      <div class="sync-status" id="sync-status" title="Sync status"></div>
+      <button id="navigatorSync" class="primary">Force Sync</button>
+      <button id="loadUci" class="secondary">Load UCI 649</button>
+      <button id="scanQr" class="secondary">Scan QR (demo)</button>
+    </div>
+    <div class="tabs">
+      <button id="tabAttendance" class="tab active">Attendance</button>
+      <button id="tabAnalytics" class="tab">Live Analytics</button>
+    </div>
+  </header>
+
+  <section id="statusBar" class="status-bar"></section>
+  <section class="mapping-bar" id="mappingBar">UCI mapping: <strong>absences</strong> → absences, <strong>traveltime</strong> → traveltime</section>
+
+  <section class="tab-panel" id="panelAttendance">
+    <div class="students"><h2>Students (50 rural sample)</h2><div id="studentList"></div></div>
+  </section>
+
+  <section class="tab-panel hidden" id="panelAnalytics">
+    <div class="analytics">
+      <h2>Live Analytics</h2>
+      <div class="chart-card"><canvas id="attendanceChart" aria-label="Today's attendance"></canvas></div>
+      <div class="chart-card"><canvas id="riskChart" aria-label="Risk vs absences"></canvas></div>
+    </div>
+  </section>
+
+  <template id="studentRowTemplate">
+    <div class="student-row">
+      <div class="student-name"><span class="student-risk"></span> <strong class="name"></strong></div>
+      <div class="info">ID: <span class="id"></span> | Parent: <span class="parent"></span> | Phone: <span class="phone"></span></div>      <div class="prediction">Predicted G3: <span class="predicted-g3">-</span> | Dropout alert: <span class="risk-tag">-</span></div>      <div class="toggles">
+        <button class="mark present">Present</button>
+        <button class="mark absent">Absent</button>
+        <button class="mark late">Late</button>
+      </div>
+      <div class="record">Latest: <span class="latest">-</span></div>
+    </div>
+  </template>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(console.error);
+    }
+  </script>
+</body>
+</html>

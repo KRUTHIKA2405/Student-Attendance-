@@ -1,0 +1,86 @@
+[
+  {
+    "absences": 0,
+    "risk": 5
+  },
+  {
+    "absences": 1,
+    "risk": 5
+  },
+  {
+    "absences": 2,
+    "risk": 5
+  },
+  {
+    "absences": 3,
+    "risk": 5
+  },
+  {
+    "absences": 4,
+    "risk": 19
+  },
+  {
+    "absences": 5,
+    "risk": 19
+  },
+  {
+    "absences": 6,
+    "risk": 19
+  },
+  {
+    "absences": 7,
+    "risk": 19
+  },
+  {
+    "absences": 8,
+    "risk": 45
+  },
+  {
+    "absences": 9,
+    "risk": 45
+  },
+  {
+    "absences": 10,
+    "risk": 45
+  },
+  {
+    "absences": 11,
+    "risk": 70
+  },
+  {
+    "absences": 12,
+    "risk": 70
+  },
+  {
+    "absences": 13,
+    "risk": 70
+  },
+  {
+    "absences": 14,
+    "risk": 70
+  },
+  {
+    "absences": 15,
+    "risk": 70
+  },
+  {
+    "absences": 16,
+    "risk": 90
+  },
+  {
+    "absences": 17,
+    "risk": 90
+  },
+  {
+    "absences": 18,
+    "risk": 90
+  },
+  {
+    "absences": 19,
+    "risk": 90
+  },
+  {
+    "absences": 20,
+    "risk": 90
+  }
+]
